@@ -1,17 +1,20 @@
 # Intro
 
-Moving average strategies are extremely common on financial markets. They can be used as self-sufficient strategies, to find the best moments of buying and selling of an asset one has particular view has regarding its general trend or some other combination with fundamental, alternative and/or technical data.
+Moving average strategies are extremely common on financial markets. They can be self-sufficient strategies, used to improve timing of buying and selling securitires or with some other combination of fundamental, alternative and/or technical data.
 
-This project aims to test an extremely simple strategy on the Ibovespa index, analyse its effectiveness and, if it is indeed effective, propose ways to expose one's portfolio to it.
+This project aims to test an extremely simple strategy on the Ibovespa index (the brazilian equities index), analyse its effectiveness and, if it is indeed effective, propose ways this strategy could fit into a portfolio.
 
-## Simple Moving Average (SMA) with multiple holding periods (HP) on the Ibovespa index
+## Breakouts and holding period
 
-The tested strategy is a common SMA breakout strategy. Here, a **breakout** is defined when the asset's open price on a certain day is higher/lower than the SMA and the close price is lower/higher than the SMA. When a breakout occurs, a buy or sell signal is generated, depending on whether the price breaks the SMA bottom-up (buy signal) or top-down (sell signal). On the next day of the breakout, the asset is bought/sold on the opening price. The next two images illustrate the generation of a buy and sell signal, respectively, using a 252 days SMA and the position entry points for each case:
+The tested strategy is a common SMA breakout strategy. Here, a **breakout** is defined as when the asset's open price on a certain day is higher/lower than the SMA and the close price is lower/higher than the SMA. That generates a buy or sell signal, depending on whether the price breaks the SMA upwards (buy signal) or downwards (sell signal). On the next day of the breakout, the asset is bought/sold at the opening price. 
 
-**Buy signal**
+After entering a position, we'll close it after X days. That X is called **holding period**. 
+The next two images illustrate two trades, one a buy (long) and  other a sell (short), respectively, using a 252 days SMA, pointing out the entry and exit points considering a holding period of 10 days:
 
-![image](https://github.com/keraban-rocha/ibov-trading/assets/123394105/459bbfe9-f40d-43e6-98b2-b1b24cadb1b3)
+**Buy (long) example**
 
-**Sell signal**
+![image](https://github.com/keraban-rocha/ibov-trading/assets/123394105/e18208cd-77d5-405d-92cd-b6668b489376)
 
-![image](https://github.com/keraban-rocha/ibov-trading/assets/123394105/cd0f9be5-bfe9-49d6-a46c-381de6eed3d3)
+**Sell (short) example**
+
+![image](https://github.com/keraban-rocha/ibov-trading/assets/123394105/6a82cee9-b572-4bf9-b69b-974b195c4439)
