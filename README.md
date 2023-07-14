@@ -1,8 +1,16 @@
 # Intro
 
-Simple moving average (SMA) strategies are extremely common on financial markets. They can be self-sufficient strategies, used to improve timing of buying and selling securitires or with some other combination of fundamental, alternative and/or technical data.
+Moving average strategies are extremely common on financial markets. They can be self-sufficient strategies, used to improve timing of buying and selling securitires or with some other combination of fundamental, alternative and/or technical data.
 
 This project aims to test an extremely simple strategy on the Ibovespa index (the brazilian equities index), analyse its effectiveness and, if it is indeed effective, propose ways this strategy could fit into a portfolio.
+
+## Simple moving averages (SMA)
+
+We call it "simple" because we don't apply some weight on, for exemple, the most recent prices, all prices have the same weight.And we call it "moving" because each new period, we update that average by including the latest and removing the oldest information (on our case, prices). The formula to calculate it is as follows (n is the number of periods we are looking back to calculate the average):
+
+![image](https://github.com/keraban-rocha/ibov-trading/assets/123394105/41fec533-dad4-4ec2-8a31-02fbb0382fc3)
+
+**We will use various SMA periods throughout the study.**
 
 ## Breakouts and holding period
 
