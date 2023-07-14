@@ -6,7 +6,7 @@ This project aims to test an extremely simple strategy on the Ibovespa index (th
 
 ## Breakouts and holding period
 
-The tested strategy is a common SMA breakout strategy. Here, a **breakout** is defined as when the asset's open price on a certain day is higher/lower than the SMA and the close price is lower/higher than the SMA. That generates a buy or sell signal, depending on whether the price breaks the SMA upwards (buy signal) or downwards (sell signal). On the next day of the breakout, the asset is bought/sold at the opening price. 
+The tested strategy is a common SMA breakout strategy. Here, a **breakout** is defined as when the asset's open price on a certain day is higher/lower than the SMA and the close price is lower/higher than the SMA. That generates a buy or sell signal, depending on whether the price breaks the SMA upwards (buy signal) or downwards (sell signal). On the next day of the breakout, the asset is bought/sold at the opening price. That way, we can define this strategy as a *trend following* strategy.
 
 After entering a position, we'll close it after X days. That X is called **holding period**. 
 The next two images illustrate two trades, one a buy (long) and  other a sell (short), respectively, using a 252 days SMA, pointing out the entry and exit points considering a holding period of 10 days:
