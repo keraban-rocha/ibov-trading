@@ -6,7 +6,7 @@ This project aims to test an extremely simple strategy on the Ibovespa index (th
 
 ## Simple moving averages (SMA)
 
-We call it "simple" because we don't apply some weight on, for exemple, the most recent prices, all prices have the same weight.And we call it "moving" because each new period, we update that average by including the latest and removing the oldest information (on our case, prices). The formula to calculate it is as follows (n is the number of periods we are looking back to calculate the average):
+We call it "simple" because we don't apply some weight on, for example, the most recent prices, all prices have the same weight. And we call it "moving" because each new period, that average is updated by including the latest price and removing the oldest one. The formula to calculate it is as follows (n is the number of periods we are looking back to calculate the average):
 
 ![image](https://github.com/keraban-rocha/ibov-trading/assets/123394105/41fec533-dad4-4ec2-8a31-02fbb0382fc3)
 
@@ -26,3 +26,5 @@ The next two images illustrate two trades, one a buy (long) and  other a sell (s
 **Sell (short) example**
 
 ![image](https://github.com/keraban-rocha/ibov-trading/assets/123394105/6a82cee9-b572-4bf9-b69b-974b195c4439)
+
+An important observation is that **overlapping signals are ignored**. If a position is already taken and the price breaks the SMA upwards or downwards, generating a signal, that signal is ignored and the position is closed only when the holding period is reached.
