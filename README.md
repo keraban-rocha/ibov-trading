@@ -27,4 +27,8 @@ The next two images illustrate two trades, one a buy (long) and  other a sell (s
 
 ![image](https://github.com/keraban-rocha/ibov-trading/assets/123394105/6a82cee9-b572-4bf9-b69b-974b195c4439)
 
-An important observation is that **overlapping signals are ignored**. If a position is already taken and the price breaks the SMA upwards or downwards, generating a signal, that signal is ignored and the position is closed only when the holding period is reached.
+## Model parameters and other important observations
+
+For this study, several combinations of SMA and holding periods were run. Specifically, the range for both was 5 through 252 with a step of 5, totaling 124 SMA and holding periods, and 15,376 possible combinations. 
+
+Also, since a signal occurs when the price breaks to the SMA i.e. is close to the SMA, frequently more than one breakout occur at a very short period of time. In order to avoid closing a position and then opening another too quickly, **overlapping signals are ignored**. If a position is already taken and the price breaks the SMA upwards or downwards, generating a signal, that signal is ignored and the position is closed only when the holding period is reached. That generates less several trades and generates the opportunity to follow the trend if it occurs.
