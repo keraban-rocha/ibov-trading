@@ -1,20 +1,21 @@
-# Intro
+# Introduction
 
-Moving average strategies are extremely common on financial markets. They can be self-sufficient strategies, used to improve timing of buying and selling securities or with some other combination of fundamental, alternative and/or technical data.
+Asset managers, individual investors, pension funds and virtually every trader daily face the challenge of deciding whether to buy or sell a security. But a particular challenged is faced by the long-only equities investor, that must maintain a long (bought) position at all times, even when the market is suffering losses. 
 
-This project aims to test an extremely simple strategy on the Ibovespa index (the brazilian equities index), analyse its effectiveness and, if it is indeed effective, propose ways this strategy could fit into a portfolio.
+In order to address this problem, I tested a simple moving average (SMA) strategy analysing specifically its results when **only sell (short) signals** are considered. The idea is that, if the strategy is effective, those investors can use it to time the market and reduce their long exposition. I also analysed, given the effectiveness of the strategy, what is the best way to do that. We'll also look into long-only signals but mostly for comparison purposes.
 
 ## Simple moving averages (SMA)
 
-We call it "simple" because we don't apply some weight on, for example, the most recent prices, all prices have the same weight. And we call it "moving" because each new period, that average is updated by including the latest price and removing the oldest one. The formula to calculate it is as follows (n is the number of periods we are looking back to calculate the average):
+Moving average strategies are extremely common on financial markets. They can be self-sufficient strategies, used to improve timing of buying and selling 
+securities or with some other combination of fundamental, alternative and/or technical data.
+
+We call it "simple" because we don't apply some weight on, for example, the most recent prices, all prices have the same weight. And we call it "moving" because at each new period, that average is updated by including the latest price and removing the oldest one. The formula to calculate it is as follows (n is the number of periods we are looking back to calculate the average):
 
 ![image](https://github.com/keraban-rocha/ibov-trading/assets/123394105/41fec533-dad4-4ec2-8a31-02fbb0382fc3)
 
-**We will use various SMA periods throughout the study.**
-
 ## Breakouts and holding period
 
-The tested strategy is a common SMA breakout strategy. Here, a **breakout** is defined as when the asset's open price on a certain day is higher/lower than the SMA and the close price is lower/higher than the SMA. That generates a buy or sell signal, depending on whether the price breaks the SMA upwards (buy signal) or downwards (sell signal). On the next day of the breakout, the asset is bought/sold at the opening price. That way, we can define this strategy as a *trend following* strategy.
+The tested strategy is a common SMA breakout strategy. Here, a **breakout** is defined as when the asset's open price on a certain day is higher/lower than the SMA and the close price is lower/higher than the SMA. That generates a buy or sell signal, depending on whether the price breaks the SMA upwards (buy signal) or downwards (sell signal). On the next day of the breakout, the asset is bought/sold at the opening price. That way, we can define this strategy as a *trend following* strategy because it intends to capture a trend as its very beginning, signaled by the breakout.
 
 After entering a position, we'll close it after X days. That X is called **holding period**. 
 The next two images illustrate two trades, one a buy (long) and  other a sell (short), respectively, using a 252 days SMA, pointing out the entry and exit points considering a holding period of 10 days:
@@ -27,11 +28,14 @@ The next two images illustrate two trades, one a buy (long) and  other a sell (s
 
 ![image](https://github.com/keraban-rocha/ibov-trading/assets/123394105/6a82cee9-b572-4bf9-b69b-974b195c4439)
 
-## Model parameters and other important observations
+## Model parameters and data used
 
-For this study, several combinations of SMA and holding periods were run. Specifically, the range for both was 5 through 252 with a step of 5, totaling 50 SMA and holding periods, and 2,500 possible combinations. 
+For this study, several combinations of SMA and holding periods were run. Specifically, the range for both was 5 through 252 with a step of 5, totaling 50 SMA, 50 holding periods and 2,500 possible combinations. That range can be dinamically changed on the script so that you might run this strategy to any combinations you like.
 
-Also, since a signal occurs when the price breaks to the SMA i.e. is close to the SMA, frequently more than one breakout occur at a very short period of time. In order to avoid closing a position and then opening another too quickly, **overlapping signals are ignored**. If a position is already taken and the price breaks the SMA upwards or downwards, generating a signal, that signal is ignored and the position is closed only when the holding period is reached. That generates less several trades and generates the opportunity to follow the trend if it occurs.
+Also, since a signal occurs when the price breaks the SMA i.e. is close to the SMA, frequently more than one breakout occur at a very short period of time. In order to avoid two positions running simultaneously, **overlapping signals are ignored**. If a position is already taken and a breakout occurs, that signal is ignored, not mattering if the signal is at the same or at the opposite direction.
 
-### Data used
-Daily data from the Ibovespa index extracted from a trading platform called Tryd, ranging from july/2002 through may/2023. If you wish to try this strategy on other assets, simply organize an Excel file with the same layout and run the scripts.
+The data used was daily open-high-low-close (OHLC) adjusted prices from the Ibovespa index extracted from a trading platform called Tryd ranging from july/2002 through may/2023. If you wish to try this strategy on other securities, simply organize an Excel file with the same layout and run the scripts.
+
+## Results analysis
+
+For each combination of SMA and holding period, I calculated the return of each individual trade and then calculated the mean, maximum and minimum returns, number of trades and the percentage of positive trades. An important difference between each SMA is the *number of trades*. The higher the SMA period, the lower the number of signals, because the SMA swings less as the number of periods used to calculate it increases, generating fewer breakouts.
