@@ -32,7 +32,7 @@ The next two images illustrate two trades, one a buy (long) and  other a sell (s
 
 For this study, several combinations of SMA and holding periods were run. Specifically, the range for both was 5 through 252 with a step of 5, totaling 50 SMA, 50 holding periods and 2,500 possible combinations. That range can be dinamically changed on the script so that you might run this strategy to any combinations you like.
 
-Also, since a signal occurs when the price breaks the SMA i.e. is close to the SMA, frequently more than one breakout occur at a very short period of time. In order to avoid two positions running simultaneously, **overlapping signals are ignored**. If a position is already taken and a breakout occurs, that signal is ignored, not mattering if the signal is at the same or at the opposite direction.
+Also, since a signal occurs when the price breaks the SMA i.e., is close to the SMA, frequently more than one breakout occur at a very short period of time. In order to avoid two positions running simultaneously, **overlapping signals are ignored**. If a position is already taken and a breakout occurs, that signal is ignored, not mattering if the signal is at the same or at the opposite direction.
 
 The data used was daily open-high-low-close (OHLC) adjusted prices from the Ibovespa index extracted from a trading platform called Tryd ranging from july/2002 through may/2023. If you wish to try this strategy on other securities, simply organize an Excel file with the same layout and run the scripts.
 
