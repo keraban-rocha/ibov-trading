@@ -1,15 +1,15 @@
 # Introduction
 
-Asset managers, individual investors, pension funds and virtually every trader daily face the challenge of deciding whether to buy or sell a security. But a particular challenged is faced by the long-only equities investor, that must maintain a long (bought) position at all times, even when the market is suffering losses. 
+Asset managers, individual investors, pension funds and virtually every trader daily face the challenge of deciding whether to buy or sell a security. But a particular one is faced by the long-only equities investor, that must maintain a long (bought) position at all times, even when the market is suffering losses. Moreover, timing the market is an extremely challenging endeavor, so it is difficult to decide *when* to reduce long exposure.
 
-In order to address this problem, I tested a simple moving average (SMA) strategy analysing specifically its results when **only sell (short) signals** are considered. The idea is that, if the strategy is effective, those investors can use it to time the market and reduce their long exposition. I also analysed, given the effectiveness of the strategy, what is the best way to do that. We'll also look into long-only signals but mostly for comparison purposes.
+In order to address this problem, I tested a simple moving average (SMA) strategy analysing specifically its results when **only sell (short) signals** are considered. The idea is that, if the strategy is effective, those investors can use it to time the market and reduce their long exposure. I also analysed, given the effectiveness of the strategy, what is the best way to do that. We'll also look into long-only signals but mostly for comparison purposes.
 
 ## Simple moving averages (SMA)
 
 Moving average strategies are extremely common on financial markets. They can be self-sufficient strategies, used to improve timing of buying and selling 
 securities or with some other combination of fundamental, alternative and/or technical data.
 
-We call it "simple" because we don't apply some weight on, for example, the most recent prices, all prices have the same weight. And we call it "moving" because at each new period, that average is updated by including the latest price and removing the oldest one. The formula to calculate it is as follows (n is the number of periods we are looking back to calculate the average):
+We call it "simple" because we don't apply some weight on, for example, the most recent prices, so all prices have the same weight. And we call it "moving" because at each new period, that average is updated by including the latest price and removing the oldest one. The formula to calculate it is as follows (n is the number of periods we are looking back to calculate the average):
 
 ![image](https://github.com/keraban-rocha/ibov-trading/assets/123394105/41fec533-dad4-4ec2-8a31-02fbb0382fc3)
 
