@@ -4,6 +4,14 @@ Asset managers, individual investors, pension funds and virtually every trader d
 
 In order to address this problem, I tested a simple moving average (SMA) strategy analysing specifically its results when **only sell (short) signals** are considered. The idea is that, if the strategy is effective, those investors can use it to time the market and reduce their long exposure. I also analysed, given the effectiveness of the strategy, what is the best way to do that. We'll also look into long-only signals but mostly for comparison purposes.
 
+Before we dive in the strategy *per se*, I'll guide you through the use of this repository
+
+## Step-by-step
+
+1. Git clone this repository into your machine
+2. Run the file create_venv.bat to create a virtual environment and install all required packages
+3. Run strategy.ipynb to create a .csv file called results
+
 ## Simple moving averages (SMA)
 
 Moving average strategies are extremely common on financial markets. They can be self-sufficient strategies, used to improve timing of buying and selling 
