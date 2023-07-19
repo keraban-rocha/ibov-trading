@@ -8,9 +8,13 @@ Before we dive in the strategy *per se*, I'll guide you through the use of this 
 
 ## Step-by-step
 
-1. Git clone this repository into your machine
-2. Run the file create_venv.bat to create a virtual environment and install all required packages
-3. Run strategy.ipynb to create a .csv file called results
+1. Open your prompt terminal or GitBash the folder you want to clone the repository in
+2. Git clone this repository into your machine by using the command
+   ```bash
+   git clone https://github.com/keraban-rocha/ibov-trading.git
+   ```
+3. Run the file `create_venv.bat` to create a virtual environment and install all required packages from `requirements.txt`
+4. Run `strategy.ipynb` to create a file called `results.csv`. This file contains all the strategy's trades
 
 ## Simple moving averages (SMA)
 
