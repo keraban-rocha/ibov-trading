@@ -1,4 +1,4 @@
-## Introduction
+## The problem
 
 Asset managers, individual investors, pension funds and virtually every trader daily face the challenge of deciding whether to buy or sell a security. But a particular one is faced by the long-only equities investor, that must maintain a long (bought) position at all times, even when the market is suffering losses. Moreover, timing the market is an extremely challenging endeavor, so it is difficult to decide *when* to reduce long exposure.
 
