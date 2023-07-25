@@ -51,3 +51,16 @@ The data used was daily open-high-low-close (OHLC) adjusted prices from the Ibov
 ## Results analysis
 
 For each combination of SMA and holding period, I calculated the return of each individual trade and then calculated the mean, maximum and minimum returns, number of trades and the percentage of positive trades. An important difference between each SMA is the *number of trades*. The higher the SMA period, the lower the number of signals, because the SMA swings less as the number of periods used to calculate it increases, generating fewer breakouts.
+
+This is supposed to be a simple, descriptive statistics analysis, but feel to improve it anyway you like. I defined the following criteria for a SMA/HP combination to be eligible:
+
+1. More than 50 trades (an average of approximately 1 trade every 100 days)
+2. Positive mean
+3. Max-min ratio larger than 3
+
+Since the problem I aim to address is the difficulty of timing the market, specifically to reduce exposure on the Ibovespa index, I also considered only sell signals. Out of the 2,500 strategies, only 15 met those criteria (organized from highest to lowest mean):
+
+![image](https://github.com/keraban-rocha/ibov-trading/assets/123394105/572f1d0a-b591-4297-a88f-2ec37f6b2f69)
+
+
+
