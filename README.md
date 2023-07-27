@@ -14,7 +14,8 @@ Before we dive in the strategy *per se*, here's a step-by-step guide to use this
    git clone https://github.com/keraban-rocha/ibov-trading.git
    ```
 3. Run the file `create_venv.bat` to create a virtual environment and install all required packages from `requirements.txt`
-4. Run `strategy.ipynb` to create a file called `results.csv` that contains all the strategy's trades
+4. Run `strategy.ipynb` to create a file called `results.csv` that contains all the strategy's trades. You can run with the default parameters (SMA and HP combinations) or run any combinations you like
+5. Lastly, run `results_analysis.ipynb` to obtain the analysis I show at the last session.
 
 ## Simple moving averages (SMA)
 
