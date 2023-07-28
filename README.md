@@ -2,7 +2,7 @@
 
 Asset managers, individual investors, pension funds and virtually every trader daily face the challenge of deciding whether to buy or sell a security. But a particular one is faced by the long-only equities investor, that must maintain a long (bought) position at all times, even when the market is suffering losses. Moreover, timing the market is an extremely challenging endeavor, so it is difficult to decide *when* to reduce long exposure.
 
-In order to address this problem, I tested a simple moving average (SMA) strategy analysing specifically its results when **only sell (short) signals** are considered. The idea is that, if the strategy is effective, those investors can use it to time the market and reduce their long exposure. I also analysed, given the effectiveness of the strategy, what is the best way to do that. We'll also look into long-only signals but mostly for comparison purposes.
+In order to address this problem, I tested a simple moving average (SMA) strategy analysing specifically its results when **only sell (short) signals** are considered. The idea is that, if the strategy is effective, those investors can use it to time the market and reduce their long exposure.
 
 Before we dive in the strategy *per se*, here's a step-by-step guide to use this repository.
 
